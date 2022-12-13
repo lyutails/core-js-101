@@ -69,8 +69,10 @@ function doubleArray(arr) {
  *    [-1, 2, -5, -4, 0] => [ 2 ]
  *    [] => []
  */
-function getArrayOfPositives(/* arr */) {
-  throw new Error('Not implemented');
+function getArrayOfPositives(arr) {
+  if (arr === []) { return []; }
+  const positiveArray = arr.filter((num) => num > 0);
+  return positiveArray;
 }
 
 /**
