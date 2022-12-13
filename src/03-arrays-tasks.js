@@ -105,7 +105,6 @@ function getArrayOfStrings(arr) {
  *    [ false, 0, NaN, '', undefined ]   => [ ]
  */
 function removeFalsyValues(arr) {
-  //const noFalsyArray = arr.filter((elem) => elem !== 0 || elem !== false || elem !== Number.isNaN(elem) || elem !== '' || elem !== undefined);
   const noFalsyArray = arr.filter(Boolean);
   return noFalsyArray;
 }
