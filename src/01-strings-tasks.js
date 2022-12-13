@@ -19,7 +19,7 @@
  *   '',  'bb'  => 'bb'
  */
 function concatenateStrings(value1, value2) {
-  //return value1 + value2;
+  // return value1 + value2;
   return value1.concat(value2);
 }
 
@@ -132,7 +132,7 @@ function repeatString(value, count) {
  */
 function removeFirstOccurrences(str, value) {
   return str.replace(value, '');
-  //if (str.match(/value/g).length > 1) str = str.replace(value, '');
+  // if (str.match(/value/g).length > 1) str = str.replace(value, '');
 }
 
 /**
@@ -181,6 +181,7 @@ function convertToUpperCase(str) {
  *   'info@gmail.com' => ['info@gmail.com']
  */
 function extractEmails(str) {
+  return str.split(';');
 }
 
 /**
@@ -228,6 +229,8 @@ function getRectangleString(/* width, height */) {
  *
  */
 function encodeToRot13(str) {
+  const alpha = 'abcdefghijklmnopqrstuvwxyzabcdefghijklmABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLM';
+  return str.replace(/[a-z]/gi, (letter) => alpha[alpha.indexOf(letter) + 13]);
 }
 
 /**
@@ -244,8 +247,8 @@ function encodeToRot13(str) {
  *   isString(new String('test')) => true
  */
 function isString(value) {
-  if (typeof value === String) {return true;}
-  else return false;
+  if (typeof value === 'string') { return true; }
+  return false;
 }
 
 
