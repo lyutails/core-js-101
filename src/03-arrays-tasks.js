@@ -54,8 +54,7 @@ function generateOdds(/* len */) {
  */
 function doubleArray(arr) {
   let newArr = [];
-  if (arr === []) return [];
-  else return newArr = [...arr,  ...arr];
+  if (arr === []) { return []; } newArr = [...arr, ...arr]; return newArr;
 }
 
 
