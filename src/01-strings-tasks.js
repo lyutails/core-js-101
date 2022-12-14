@@ -278,8 +278,12 @@ function isString(value) {
  *   'Q♠' => 50
  *   'K♠' => 51
  */
-function getCardId(/* value */) {
-  throw new Error('Not implemented');
+function getCardId(value) {
+  const arr = value.replace("'", '').split(',');
+  for (let i = 0; i <= arr.length; i += 1) {
+    return arr.indexOf(arr[i]);
+  }
+  return value;
 }
 
 
