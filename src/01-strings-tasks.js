@@ -162,7 +162,7 @@ function unbracketTag(str) {
  *  'abcdefghijklmnopqrstuvwxyz' => 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
  */
 function convertToUpperCase(str) {
-  str.toUpperCase();
+  return str.toUpperCase();
 }
 
 /**
@@ -207,8 +207,10 @@ function extractEmails(str) {
  *             '└──────────┘\n'
  *
  */
-function getRectangleString(/* width, height */) {
-  throw new Error('Not implemented');
+function getRectangleString(width, height) {
+  return '┌'+'─'.repeat(width-2)+'┐'+'\n'+
+  ('│'+' '.repeat(width-2)+'│'+'\n').repeat(height-2)+
+  '└'+'─'.repeat(width-2)+'┘'+'\n';
 }
 
 
@@ -247,7 +249,7 @@ function encodeToRot13(str) {
  *   isString(new String('test')) => true
  */
 function isString(value) {
-  if (typeof value === 'string') { return true; }
+  if (typeof value === 'string' || value instanceof String) { return true; }
   return false;
 }
 
