@@ -53,7 +53,7 @@ function getStringLength(value) {
  *   'Chuck','Norris'  => 'Hello, Chuck Norris!'
  */
 function getStringFromTemplate(firstName, lastName) {
-  return `Hello, ${firstName} ${lastName}`;
+  return `Hello, ${firstName} ${lastName}!`;
 }
 
 /**
@@ -68,7 +68,7 @@ function getStringFromTemplate(firstName, lastName) {
  */
 function extractNameFromTemplate(value) {
   const sentence = value.split(' ');
-  return `${sentence[2]} ${sentence[3]}`;
+  return `${sentence[1]} ${sentence[2].slice(0, -1)}`;
 }
 
 
@@ -84,7 +84,7 @@ function extractNameFromTemplate(value) {
  */
 function getFirstChar(value) {
   const letter = value.split('');
-  return letter[1];
+  return letter[0];
 }
 
 /**
@@ -147,7 +147,7 @@ function removeFirstOccurrences(str, value) {
  *   '<a>' => 'a'
  */
 function unbracketTag(str) {
-  return str.replace(/<>/g, '');
+  return str.slice(1, -1);
 }
 
 
