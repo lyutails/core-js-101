@@ -166,7 +166,7 @@ function parseNumberFromString(value) {
  */
 function getParallelepipedDiagonal(a, b, c) {
   const diagonalCube = a * a + b * b + c * c;
-  const diagonalLength = Math.cbrt(diagonalCube);
+  const diagonalLength = Math.sqrt(diagonalCube);
   return diagonalLength;
 }
 
