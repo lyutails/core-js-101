@@ -466,8 +466,8 @@ function getIdentityMatrix(/* n */) {
  *     0, 100 => [ 0, 1, 2, ..., 100 ]
  *     3, 3   => [ 3 ]
  */
-function getIntervalArray(/* start, end */) {
-  throw new Error('Not implemented');
+function getIntervalArray(start, end) {
+  return Array.from({length: end - start + 1}, (x, i) => i + start);
 }
 
 /**
@@ -554,7 +554,7 @@ function selectMany(arr, childrenSelector) {
  *   [[[ 1, 2, 3]]], [ 0, 0, 1 ]      => 2        (arr[0][0][1])
  */
 function getElementByIndexes(arr, indexes) {
-  return indexes.reduce((obj, prop) => obj[prop], arr);
+  return indexes.reduce((accumulator, currentValue) => accumulator[currentValue], arr);
 }
 
 
