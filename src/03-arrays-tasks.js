@@ -295,7 +295,7 @@ function propagateItemsByPositionIndex(arr) {
  */
 function get3TopItems(arr) {
   if (arr === []) return [];
-  return Math.max(...arr);
+  return arr.sort((a, b) => b - a).slice(0, 3);
 }
 
 
