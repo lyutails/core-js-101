@@ -276,7 +276,7 @@ function getSecondItems(arr) {
  *  [ 1,2,3,4,5 ] => [ 1, 2,2, 3,3,3, 4,4,4,4, 5,5,5,5,5 ]
  */
 function propagateItemsByPositionIndex(arr) {
-  return arr.map((element) => arr.push(element * arr));
+  return arr.flatMap((elem, index) => Array.from({ length: index + 1 }).fill(elem));
 }
 
 
