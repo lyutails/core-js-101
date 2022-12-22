@@ -330,7 +330,12 @@ function getPositivesCount(arr) {
  *   [ 'one','one','one','zero' ]     => [ 'zero','one','one','one' ]
  */
 function sortDigitNamesByNumericOrder(arr) {
-  return arr.sort();
+  const compare = (a, b) => {
+    const allOrdered = ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine'];
+    return allOrdered.indexOf(a) - allOrdered.indexOf(b);
+  };
+  const result = arr.sort(compare);
+  return result;
 }
 
 /**
