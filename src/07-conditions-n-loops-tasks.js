@@ -183,8 +183,13 @@ function isInsideCircle(circle, point) {
  *   'abracadabra'  => 'c'
  *   'entente' => null
  */
-function findFirstSingleChar(/* str */) {
-  throw new Error('Not implemented');
+function findFirstSingleChar(str) {
+  const characters = str.split('');
+  // eslint-disable-next-line no-plusplus
+  for (let i = 0; i < str.length; i++) {
+    if (characters.filter((j) => j === str.charAt(i)).length === 1) return str.charAt(i);
+  }
+  return null;
 }
 
 
