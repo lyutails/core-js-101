@@ -454,13 +454,12 @@ function toStringList(arr) {
  *    ]
  */
 function sortCitiesArray(arr) {
-  const sortOrder = 1;
-  return function sort(a, b) {
-    if (sortOrder === -1) {
-      return b[arr].localeCompare(a[arr]);
+  return arr.sort((a, b) => {
+    if (a.country === b.country) {
+      return a.city.localeCompare(b.city);
     }
-    return a[arr].localeCompare(b[arr]);
-  };
+    return a.country.localeCompare(b.country);
+  });
 }
 
 /**
