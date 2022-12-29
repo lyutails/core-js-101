@@ -215,8 +215,8 @@ function findFirstSingleChar(str) {
  *   5, 3, true, true   => '[3, 5]'
  *
  */
-function getIntervalString(/* a, b, isStartIncluded, isEndIncluded */) {
-  throw new Error('Not implemented');
+function getIntervalString(a, b, isStartIncluded, isEndIncluded) {
+  Math.getIntervalString
 }
 
 
@@ -418,8 +418,47 @@ function getMatrixProduct(/* m1, m2 */) {
  *    [    ,   ,    ]]
  *
  */
-function evaluateTicTacToePosition(/* position */) {
-  throw new Error('Not implemented');
+function evaluateTicTacToePosition(position) {
+  // eslint-disable-next-line camelcase
+  const char_x = 'X';
+  // eslint-disable-next-line camelcase
+  const char_y = '0';
+  // horizontal check
+  // eslint-disable-next-line camelcase, max-len
+  if (position[0][0] === char_x && position[1][0] === char_x && position[2][0] === char_x) return 'X';
+  // eslint-disable-next-line camelcase
+  if (position[0][0] === char_y && position[1][0] === char_y && position[2][0] === char_y) return '0';
+  // eslint-disable-next-line camelcase, max-len
+  if (position[0][1] === char_x && position[1][1] === char_x && position[2][1] === char_x) return 'X';
+  // eslint-disable-next-line camelcase, max-len
+  if (position[0][1] === char_y && position[1][1] === char_y && position[2][1] === char_y) return '0';
+  // eslint-disable-next-line camelcase, max-len
+  if (position[0][2] === char_x && position[1][2] === char_x && position[2][2] === char_x) return 'X';
+  // eslint-disable-next-line camelcase, max-len
+  if (position[0][2] === char_y && position[1][2] === char_y && position[2][2] === char_y) return '0';
+  // vertical check
+  // eslint-disable-next-line camelcase, max-len
+  if (position[0][0] === char_x && position[0][1] === char_x && position[0][2] === char_x) return 'X';
+  // eslint-disable-next-line camelcase
+  if (position[0][0] === char_y && position[0][1] === char_y && position[0][2] === char_y) return '0';
+  // eslint-disable-next-line camelcase, max-len
+  if (position[1][0] === char_x && position[1][1] === char_x && position[1][2] === char_x) return 'X';
+  // eslint-disable-next-line camelcase, max-len
+  if (position[1][0] === char_y && position[1][1] === char_y && position[1][2] === char_y) return '0';
+  // eslint-disable-next-line camelcase, max-len
+  if (position[2][0] === char_x && position[2][1] === char_x && position[2][2] === char_x) return 'X';
+  // eslint-disable-next-line camelcase, max-len
+  if (position[2][0] === char_y && position[2][1] === char_y && position[2][2] === char_y) return '0';
+  // diagonal check
+  // eslint-disable-next-line camelcase, max-len
+  if (position[0][0] === char_x && position[1][1] === char_x && position[2][2] === char_x) return 'X';
+  // eslint-disable-next-line camelcase
+  if (position[0][0] === char_y && position[1][1] === char_y && position[2][2] === char_y) return '0';
+  // eslint-disable-next-line camelcase, max-len
+  if (position[2][0] === char_x && position[1][1] === char_x && position[0][2] === char_x) return 'X';
+  // eslint-disable-next-line camelcase, max-len
+  if (position[2][0] === char_y && position[1][1] === char_y && position[0][2] === char_y) return '0';
+  return undefined;
 }
 
 
