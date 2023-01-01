@@ -98,7 +98,11 @@ function getFastestPromise(array) {
  *
  */
 function chainPromises(array, action) {
-  return Promise.allSettled(array).then((results) => results.forEach((result) => action(result)));
+  let resolve = Promise.resolve();
+  array.forEach((item) => {
+    resolve = resolve.then(() => action(item));
+  });
+  return resolve;
 }
 
 module.exports = {
