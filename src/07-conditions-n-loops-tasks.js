@@ -407,7 +407,7 @@ function getMatrixProduct(m1, m2) {
     result[i] = [];
     // eslint-disable-next-line no-plusplus
     for (let j = 0; j < m2[0].length; j++) {
-      const sum = 0;
+      let sum = 0;
       // eslint-disable-next-line no-plusplus
       for (let k = 0; k < m1[0].length; k++) {
         // eslint-disable-next-line no-use-before-define, no-const-assign
